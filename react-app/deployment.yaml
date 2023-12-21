@@ -1,0 +1,29 @@
+# my-react-app/templates/deployment.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "my-react-app.fullname" . }}
+  labels:
+    app: {{ include "my-react-app.name" . }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "my-react-app.name" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "my-react-app.name" . }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 80
+          env:
+            - name: matiaswallenius.com
+              value: /
+
