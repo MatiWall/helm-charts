@@ -1,20 +1,19 @@
 # my-react-app/values.yaml
 
 
-deployment:
-  replicaCount: 1
-  image:
-    repository: 192.168.0.8:5000/personal-website:latest
-    tag: latest
-    pullPolicy: IfNotPresent
+replicaCount: 1
+image:
+  repository: 192.168.0.8:5000/personal-website:latest
+  tag: latest
+  pullPolicy: IfNotPresent
 
-  service:
-    name: my-react-app
-    type: ClusterIP
-    port: 80
+service:
+  name: my-react-app
+  type: ClusterIP
+  port: 80
 
-  ingress:
-    enabled: true
-    pathType: ImplementationSpecific
-    path: /
+ingress:
+  enabled: true
+  pathType: ImplementationSpecific
+  path: /
 
