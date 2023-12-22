@@ -3,18 +3,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "my-react-app.fullname" . }}
+  name: {{ include "react-app.fullname" . }}
   labels:
-    app: {{ include "my-react-app.name" . }}
+    app: {{ include "react-app.name" . }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ include "my-react-app.name" . }}
+      app: {{ include "react-app.name" . }}
   template:
     metadata:
       labels:
-        app: {{ include "my-react-app.name" . }}
+        app: {{ include "react-app.name" . }}
     spec:
       containers:
         - name: {{ .Chart.Name }}

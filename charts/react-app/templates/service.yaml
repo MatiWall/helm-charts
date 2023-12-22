@@ -5,12 +5,12 @@ kind: Service
 metadata:
   name: {{ .Values.service.name }}
   labels:
-    app: {{ include "my-react-app.name" . }}
+    app: {{ include "react-app.name" . }}
 spec:
   ports:
     - port: {{ .Values.service.port }}
       targetPort: 80
   selector:
-    app: {{ include "my-react-app.name" . }}
+    app: {{ include "react-app.name" . }}
   type: {{ .Values.service.type }}
 
