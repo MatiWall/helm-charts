@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  react-app:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2023-12-24T12:17:05.514589931Z"
+    description: Deployment template
+    digest: 41759b0622be9371e63016fbdd816406b6c46eeef03cfb57afe169a150b5bd91
+    name: react-app
+    type: application
+    urls:
+    - https://github.com/MatiWall/helm-charts/releases/download/react-app-0.0.1/react-app-0.0.1.tgz
+    version: 0.0.1
+generated: "2023-12-24T12:17:05.514599599Z"
