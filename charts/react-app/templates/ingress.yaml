@@ -11,5 +11,5 @@ spec:
       match: Host(`matiaswallenius.com`)
       priority: 10
       services:
-        - name: mw
+        - name: {{ .Values.service.name }}
           port: 80
