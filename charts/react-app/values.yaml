@@ -4,7 +4,7 @@
 replicaCount: 1
 image:
   repository: docker-registry.mw/personal-website
-  tag: latest
+  tag: 0.0.1
   pullPolicy: IfNotPresent
 
 service:
