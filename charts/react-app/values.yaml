@@ -3,7 +3,7 @@
 
 replicaCount: 1
 image:
-  repository: docker.io/library/personal-website
+  repository: 192.168.1.32:5000/personal-website
   tag: latest
   pullPolicy: IfNotPresent
 
