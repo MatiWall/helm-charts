@@ -23,7 +23,4 @@ spec:
           ports:
             - name: http
               containerPort: 80
-          env:
-            - name: matiaswallenius.com
-              value: /
 

@@ -8,7 +8,7 @@ spec:
     - web
   routes:
     - kind: Rule
-      match: Host(`matiaswallenius.com`)
+      match: Host(`{{ .Values.ingress.url }}`)
       priority: 10
       services:
         - name: {{ .Values.service.name }}
