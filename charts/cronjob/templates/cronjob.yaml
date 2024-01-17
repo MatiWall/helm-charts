@@ -13,6 +13,7 @@ spec:
           labels:
             app: {{ include "cronjob.name" . }}
         spec:
+          restartPolicy: "{{.Values.restart}}"
           containers:
             - name: {{ .Chart.Name }}
               image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
