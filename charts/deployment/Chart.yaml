@@ -1,0 +1,7 @@
+---
+apiVersion: v2
+name: deployment-template
+appVersion: "1.0"
+description: "Deployment template"
+version: 0.0.8
+type: application

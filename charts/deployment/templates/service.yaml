@@ -1,0 +1,16 @@
+# my-deployment/templates/service.yaml
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.service.name }}
+  labels:
+    app: {{ include "deployment.name" . }}
+spec:
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: 80
+  selector:
+    app: {{ include "deployment.name" . }}
+  type: {{ .Values.service.type }}
+

@@ -1,0 +1,15 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: matiwall
+  namespace: mw
+spec:
+  entryPoints:
+    - web
+  routes:
+    - kind: Rule
+      match: Host(`{{ .Values.ingress.url }}`)
+      priority: 10
+      services:
+        - name: {{ .Values.service.name }}
+          port: 80

@@ -1,0 +1,19 @@
+# my-deployment/values.yaml
+
+
+replicaCount: 1
+image:
+  repository: docker-registry.mw/personal-website
+  tag: 0.0.2
+  pullPolicy: IfNotPresent
+
+service:
+  name: deployment
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  pathType: ImplementationSpecific
+  path: /
+
