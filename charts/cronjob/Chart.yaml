@@ -1,6 +1,6 @@
 ---
 apiVersion: v2
-name: cronjob-app
+name: cronjob
 appVersion: "1.0"
 description: "CronJob template"
 version: 0.0.1
