@@ -3,6 +3,16 @@ entries:
   cronjob:
   - apiVersion: v2
     appVersion: "1.0"
+    created: "2024-01-17T19:43:58.171256396Z"
+    description: CronJob template
+    digest: b1ede40e9866c98767a2d1bc31c4a5ba7975f7a0feead17062a582d26eb0fa2d
+    name: cronjob
+    type: application
+    urls:
+    - https://github.com/MatiWall/homelab.helm-charts/releases/download/cronjob-0.0.3/cronjob-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
+    appVersion: "1.0"
     created: "2024-01-17T19:36:51.306870524Z"
     description: CronJob template
     digest: f18376c6592ce9cbc4c9730480620016144823c7741f9f30c3a444a4bb2e9850
@@ -124,4 +134,4 @@ entries:
     urls:
     - https://github.com/MatiWall/helm-charts/releases/download/react-app-0.0.1/react-app-0.0.1.tgz
     version: 0.0.1
-generated: "2024-01-17T19:36:51.306902654Z"
+generated: "2024-01-17T19:43:58.171291982Z"
