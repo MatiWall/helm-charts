@@ -4,6 +4,7 @@
 
 schedule: "*/2 * * * *"
 restart: OnFailure
+suspend: false
 image:
   repository: docker-registry.mw/personal-website
   tag: 0.0.3

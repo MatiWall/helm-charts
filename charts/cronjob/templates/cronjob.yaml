@@ -6,6 +6,7 @@ metadata:
     app: {{ include "cronjob.name" . }}
 spec:
   schedule: "{{ .Values.schedule }}"
+  suspend: "{{ .Values.suspend }}"
   jobTemplate:
     spec:
       template:
