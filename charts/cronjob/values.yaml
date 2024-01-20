@@ -1,6 +1,10 @@
 # my-deployment/values.yaml
 
-
+global:
+  environment: Production
+  system: TestSystem
+  application: test-application
+  deployable_unit: app
 
 schedule: "*/2 * * * *"
 restart: OnFailure
