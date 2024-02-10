@@ -5,16 +5,16 @@ kind: Deployment
 metadata:
   name: {{ include "deployment.fullname" . }}
   labels:
-    app: {{ include "deployment.name" . }}
+    app: {{ include "deployment.fullname" . }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ include "deployment.name" . }}
+      app: {{ include "deployment.fullname" . }}
   template:
     metadata:
       labels:
-        app: {{ include "deployment.name" . }}
+        app: {{ include "deployment.fullname" . }}
     spec:
       containers:
         - name: {{ .Chart.Name }}

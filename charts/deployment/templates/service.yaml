@@ -5,12 +5,12 @@ kind: Service
 metadata:
   name: {{ .Values.service.name }}
   labels:
-    app: {{ include "deployment.name" . }}
+    app: {{ include "deployment.fullname" . }}
 spec:
   ports:
     - port: {{ .Values.service.port }}
       targetPort: 80
   selector:
-    app: {{ include "deployment.name" . }}
+    app: {{ include "deployment.fullname" . }}
   type: {{ .Values.service.type }}
 
