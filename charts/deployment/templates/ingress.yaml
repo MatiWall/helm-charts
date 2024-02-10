@@ -1,7 +1,7 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: matiwall
+  name: "{{ include "deployment.name" . }}-ingress-route"
   namespace: mw
 spec:
   entryPoints:

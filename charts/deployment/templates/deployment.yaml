@@ -23,4 +23,14 @@ spec:
           ports:
             - name: http
               containerPort: 80
-
+          env:
+            - name: OTEL_EXPORTER_OTLP_ENDPOINT
+              value: "http://otelcollector-service.monitoring.svc.cluster.local:4317"
+            - name: ENVIRONMENT
+              value: {{ .Values.global.environment }}
+            - name: SYSTEM
+              value: {{ .Values.global.system }}
+            - name: APPLICATION
+              value: {{ .Values.global.application }}
+            - name: DEPLOYABLE_UNIT
+              value: {{ .Values.global.deployable_unit }}
