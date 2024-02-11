@@ -23,6 +23,12 @@ spec:
           ports:
             - name: http
               containerPort: 80
+          volumeMounts:
+            {{- if .Values.secrets.enabled}}
+            - name: appsecrets
+              mountPath: "app/secrets.yaml"
+              subPath: secrets
+            {{- end}}
           env:
             - name: OTEL_EXPORTER_OTLP_ENDPOINT
               value: "http://otelcollector-service.monitoring.svc.cluster.local:4317"
@@ -34,3 +40,11 @@ spec:
               value: {{ .Values.global.application }}
             - name: DEPLOYABLE_UNIT
               value: {{ .Values.global.deployable_unit }}
+  volumes:
+    {{- if .Values.secrets.enabled}}
+    - name: appsecrets
+      secret:
+        secretName:  "{{ .Chart.name }}-secrets"
+        defaultMode: 420
+    {{- end}}
+        

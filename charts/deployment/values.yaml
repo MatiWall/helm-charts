@@ -1,5 +1,12 @@
 # my-deployment/values.yaml
 
+global:
+  environment: production
+  system: test
+  application: test_application
+
+secrets:
+  enabled: false
 
 replicaCount: 1
 image:
