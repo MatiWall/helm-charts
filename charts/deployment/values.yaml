@@ -4,6 +4,7 @@ global:
   environment: production
   system: test
   application: test_application
+  deployableUnit: test
 
 secrets:
   enabled: false
