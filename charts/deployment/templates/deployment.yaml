@@ -44,7 +44,7 @@ spec:
     {{- if .Values.secrets.enabled}}
     - name: appsecrets
       secret:
-        secretName:  "{{ .Chart.Name }}-secrets"
+        secretName:  "{{ include "deployment.fullname" . }}-secrets"
         defaultMode: 420
     {{- end}}
         
