@@ -38,7 +38,7 @@ spec:
             {{- if .Values.secrets.enabled}}
             - mountPath: /app/secrets.yaml
               name: appsecrets
-              subPath: secrets.yaml
+              subPath: secrets
             {{- end}}
   volumes:
     {{- if .Values.secrets.enabled}}
