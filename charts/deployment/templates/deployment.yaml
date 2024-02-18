@@ -36,15 +36,15 @@ spec:
               value: {{ .Values.global.deployableUnit }}
           volumeMounts:
             {{- if .Values.secrets.enabled}}
-            - mountPath: secrets.yaml
+            - mountPath: app/secrets.yaml
               name: appsecrets
               subPath: secrets
             {{- end}}
-  volumes:
-    {{- if .Values.secrets.enabled}}
-    - name: appsecrets
-      secret:
-        secretName: "{{ include "deployment.fullname" . }}-secrets"
-        defaultMode: 420
-    {{- end}}
-        
+      volumes:
+        {{- if .Values.secrets.enabled}}
+        - name: appsecrets
+          secret:
+            secretName: "{{ include "deployment.fullname" . }}-secrets"
+            defaultMode: 420
+        {{- end}}
+          
