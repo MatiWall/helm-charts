@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: "{{ include "deployment.fullname" . }}-appconfig"
 data: 
-    {{ .Values.appconfig }}
+    {{ .Values.appconfig | default dict | toYaml | nindent 4}}
