@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: "{{ include "cronjob.fullname" . }}-appconfig"
 data: 
-    {{ .Values.image.repository }}
+    {{ .Values.appconfig }}
