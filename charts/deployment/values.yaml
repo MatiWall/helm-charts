@@ -25,3 +25,4 @@ ingress:
   pathType: ImplementationSpecific
   path: /
 
+appconfig: {}

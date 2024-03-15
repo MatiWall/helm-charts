@@ -40,6 +40,9 @@ spec:
               name: appsecrets
               subPath: secrets
             {{- end}}
+            - mountPath: app/appconfig.Production.yaml
+              name: appconfig
+              subPath: appconfig.Production.yaml
       volumes:
         {{- if .Values.secrets.enabled}}
         - name: appsecrets
@@ -47,4 +50,6 @@ spec:
             secretName: "{{ include "deployment.fullname" . }}-secrets"
             defaultMode: 420
         {{- end}}
-          
+        - name: appconfig
+          configMap:
+            name: "{{ include "deployment.fullname" . }}-appconfig" 
