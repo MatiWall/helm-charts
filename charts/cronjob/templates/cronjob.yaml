@@ -30,3 +30,22 @@ spec:
                   value: {{ .Values.global.application }}
                 - name: DEPLOYABLE_UNIT
                   value: {{ .Values.global.deployable_unit }}
+          volumeMounts:
+            {{- if .Values.secrets.enabled}}
+            - mountPath: app/secrets.yaml
+              name: appsecrets
+              subPath: secrets
+            {{- end}}
+            - mountPath: app/appconfig.Production.yaml
+              name: appconfig
+              subPath: appconfig.Production.yaml
+      volumes:
+        {{- if .Values.secrets.enabled}}
+        - name: appsecrets
+          secret:
+            secretName: "{{ include "cronjob.fullname" . }}-secrets"
+            defaultMode: 420
+        {{- end}}
+        - name: appconfig
+          configMap:
+            name: "{{ include "cronjob.fullname" . }}-appconfig" 
