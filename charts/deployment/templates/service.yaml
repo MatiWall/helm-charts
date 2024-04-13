@@ -9,7 +9,7 @@ metadata:
 spec:
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: 80
+      targetPort: {{ .Values.service.targetPort }}
   selector:
     app: {{ include "deployment.fullname" . }}
   type: {{ .Values.service.type }}
