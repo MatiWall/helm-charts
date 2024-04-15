@@ -42,7 +42,7 @@ spec:
             {{- end}}
             - mountPath: app/appconfig.Production.yaml
               name: appconfig
-              subPath: appconfig.Production.yaml
+              subPath: appconfig.Production
       volumes:
         {{- if .Values.secrets.enabled}}
         - name: appsecrets
