@@ -1,7 +1,7 @@
 # my-deployment/values.yaml
 
 global:
-  environment: production
+  environment: Production
   system: test
   application: test_application
   deployableUnit: test
