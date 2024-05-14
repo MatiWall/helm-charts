@@ -4,4 +4,5 @@ metadata:
   name: "{{ include "deployment.fullname" . }}-appconfig"
 data:
   appconfig.Production.yaml: |-
-    {{ .Values.appconfig | default "{}" | toYaml | indent 4 }}
+{{- $appconfig := .Values.appconfig | default "{}" | fromJson }}
+{{ toYaml $appconfig | indent 4 }}
