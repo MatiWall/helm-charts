@@ -95,6 +95,16 @@ entries:
   deployment-template:
   - apiVersion: v2
     appVersion: "1.0"
+    created: "2024-06-09T18:32:57.014595565Z"
+    description: Deployment template
+    digest: ccd81bbcec1611d2e405f193b7ac5629c9afc25659255fc3fda4df745f3c84d5
+    name: deployment-template
+    type: application
+    urls:
+    - https://github.com/MatiWall/homelab.helm-charts/releases/download/deployment-template-0.0.36/deployment-template-0.0.36.tgz
+    version: 0.0.36
+  - apiVersion: v2
+    appVersion: "1.0"
     created: "2024-06-09T15:30:39.042229378Z"
     description: Deployment template
     digest: 1e730e2e7ac28b6c05d6b201c00403cf34ad98ba8aac1881d4ac9e6a5f8a6845
@@ -454,4 +464,4 @@ entries:
     urls:
     - https://github.com/MatiWall/helm-charts/releases/download/react-app-0.0.1/react-app-0.0.1.tgz
     version: 0.0.1
-generated: "2024-06-09T15:30:39.042430073Z"
+generated: "2024-06-09T18:32:57.014888015Z"
