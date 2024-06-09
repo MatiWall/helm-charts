@@ -23,7 +23,7 @@ service:
 
 ingress:
   enabled: true
-  pathType: ImplementationSpecific
   path: /
+  host: .mw.local
 
 appconfig: {}

@@ -7,7 +7,7 @@ spec:
     - web
   routes:
     - kind: Rule
-      match: Host(`{{ .Values.ingress.url }}`)
+      match: Host(`{{ .Values.ingress.host }}`) && PathPrefix(`{{ .Values.ingress.path }}`)
       priority: 10
       services:
         - name: {{ .Values.service.name }}
