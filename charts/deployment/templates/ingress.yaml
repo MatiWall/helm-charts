@@ -12,3 +12,12 @@ spec:
       services:
         - name: {{ .Values.service.name }}
           port: 80
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: "{{ include "deployment.fullname" . }}-ingress-route-pathprefixstrip"
+spec:
+  stripPrefix:
+    prefixes:
+      - "{{ .Values.ingress.path }}"
