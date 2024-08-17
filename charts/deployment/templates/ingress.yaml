@@ -8,7 +8,7 @@ spec:
   routes:
     - kind: Rule
       match: Host(`{{ .Values.ingress.host }}`) && PathPrefix(`{{ .Values.ingress.path }}`)
-      priority: 10
+      priority: {{ .Values.ingress.priority }}
       services:
         - name: {{ .Values.service.name }}
           port: 80
