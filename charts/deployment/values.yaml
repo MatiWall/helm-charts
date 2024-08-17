@@ -27,4 +27,6 @@ ingress:
   host: .mw.local
   priority: 1
 
+configMaps: []
+
 appconfig: {}

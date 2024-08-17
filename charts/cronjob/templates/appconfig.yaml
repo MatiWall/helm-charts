@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: "{{ include "cronjob.fullname" . }}-appconfig"
-data: 
-    {{ .Values.appconfig | default dict | toYaml | nindent 4}}
