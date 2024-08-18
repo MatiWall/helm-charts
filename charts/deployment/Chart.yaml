@@ -3,5 +3,9 @@ apiVersion: v2
 name: deployment-template # deployable unit
 appVersion: "1.0"
 description: "Deployment template"
-version: 0.0.38
+version: 0.0.39
 type: application
+dependencies:
+  - name: common
+    version: 0.0.2
+    repository: "file://../common"  # Adjust the path as needed

@@ -3,18 +3,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "deployment.fullname" . }}
+  name: {{ include "common.fullname" . }}
   labels:
-    app: {{ include "deployment.fullname" . }}
+    app: {{ include "common.fullname" . }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ include "deployment.fullname" . }}
+      app: {{ include "common.fullname" . }}
   template:
     metadata:
       labels:
-        app: {{ include "deployment.fullname" . }}
+        app: {{ include "common.fullname" . }}
     spec:
       containers:
         - name: {{ .Chart.Name }}
@@ -44,12 +44,12 @@ spec:
               name: appconfig
               subPath: appconfig.Production.yaml
       volumes:
-        {{- if .Values.secrets.enabled}}
+        {{- if .Values.secrets.enabled }}
         - name: appsecrets
           secret:
-            secretName: "{{ include "deployment.fullname" . }}-secrets"
+            secretName: "{{ include "common.fullname" . }}-secrets"
             defaultMode: 420
-        {{- end}}
+        {{- end }}
         - name: appconfig
           configMap:
-            name: "{{ include "deployment.fullname" . }}-appconfig" 
+            name: "{{ include "common.fullname" . }}-appconfig" 

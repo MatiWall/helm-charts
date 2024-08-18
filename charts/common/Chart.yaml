@@ -1,7 +1,4 @@
----
 apiVersion: v2
-name: common-config
-appVersion: "1.0"
-description: "DCommon helm templates"
-version: 0.0.1
-type: application
+name: common
+description: "Common helm templates"
+version: "0.0.2"

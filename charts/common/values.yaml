@@ -1,4 +1,8 @@
-
+global:
+  environment: Production
+  system: TestSystem
+  application: test-application
+  deployableUnit: app
 
 secrets:
   enabled: false

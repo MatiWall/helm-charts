@@ -1,9 +1,9 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: {{ include "cronjob.fullname" . }}
+  name: {{ include "common.fullname" . }}
   labels:
-    app: {{ include "cronjob.name" . }}
+    app: {{ include "common.fullname" . }}
 spec:
   schedule: "{{ .Values.schedule }}"
   suspend: {{ .Values.suspend }}
@@ -12,7 +12,7 @@ spec:
       template:
         metadata:
           labels:
-            app: {{ include "cronjob.name" . }}
+            app: {{ include "common.fullname" . }}
         spec:
           restartPolicy: "{{.Values.restart}}"
           containers:
@@ -31,21 +31,21 @@ spec:
                 - name: DEPLOYABLE_UNIT
                   value: {{ .Values.global.deployable_unit }}
           volumeMounts:
-            {{- if .Values.secrets.enabled}}
+            {{- if .Values.secrets.enabled }}
             - mountPath: app/secrets.yaml
               name: appsecrets
               subPath: secrets
-            {{- end}}
+            {{- end }}
             - mountPath: app/appconfig.Production.yaml
               name: appconfig
               subPath: appconfig.Production.yaml
       volumes:
-        {{- if .Values.secrets.enabled}}
+        {{- if .Values.secrets.enabled }}
         - name: appsecrets
           secret:
-            secretName: "{{ include "cronjob.fullname" . }}-secrets"
+            secretName: "{{ include "common.fullname" . }}-secrets"
             defaultMode: 420
-        {{- end}}
+        {{- end }}
         - name: appconfig
           configMap:
-            name: "{{ include "cronjob.fullname" . }}-appconfig" 
+            name: "{{ include "common.fullname" . }}-appconfig" 
