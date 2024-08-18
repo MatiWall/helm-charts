@@ -3,5 +3,5 @@ apiVersion: v2
 name: cronjob
 appVersion: "1.0"
 description: "CronJob template"
-version: 0.0.9
+version: 0.0.10
 type: application
