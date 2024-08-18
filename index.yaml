@@ -3,6 +3,16 @@ entries:
   cronjob:
   - apiVersion: v2
     appVersion: "1.0"
+    created: "2024-08-18T06:18:49.064777367Z"
+    description: CronJob template
+    digest: c87a84cf36c050c2a9938889912b19268e4996182241036391797857e1ec65c5
+    name: cronjob
+    type: application
+    urls:
+    - https://github.com/MatiWall/homelab.helm-charts/releases/download/cronjob-0.0.10/cronjob-0.0.10.tgz
+    version: 0.0.10
+  - apiVersion: v2
+    appVersion: "1.0"
     created: "2024-03-15T14:18:16.167235485Z"
     description: CronJob template
     digest: 06ead992075feab8f27aee5a3e5db68c72d062bd4d7b6c2299132b268f2892a6
@@ -93,6 +103,16 @@ entries:
     - https://github.com/MatiWall/homelab.helm-charts/releases/download/cronjob-app-0.0.1/cronjob-app-0.0.1.tgz
     version: 0.0.1
   deployment-template:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2024-08-18T06:18:49.235989745Z"
+    description: Deployment template
+    digest: 614b68dfcd2b3b249368aa3068c58381441f13fb7357deb376cbd94b3b3b8212
+    name: deployment-template
+    type: application
+    urls:
+    - https://github.com/MatiWall/homelab.helm-charts/releases/download/deployment-template-0.0.38/deployment-template-0.0.38.tgz
+    version: 0.0.38
   - apiVersion: v2
     appVersion: "1.0"
     created: "2024-08-17T19:37:22.0819097Z"
@@ -474,4 +494,4 @@ entries:
     urls:
     - https://github.com/MatiWall/helm-charts/releases/download/react-app-0.0.1/react-app-0.0.1.tgz
     version: 0.0.1
-generated: "2024-08-17T19:37:22.082280843Z"
+generated: "2024-08-18T06:18:49.236361608Z"
